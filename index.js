@@ -1,5 +1,12 @@
 const express = require('express')
 const app = express()
+const router = require('./routes/index')
+const conn = require('./inc/conexao')
+const connTest = require('./inc/connTest')
+
+
+connTest.init(conn)
+router(app, express)
 
 app.get('/', (req, res) => {
     res.send({"message": "vtnc", "idade": 12})

@@ -1,0 +1,19 @@
+const conn = require('../inc/conexao')
+
+class UsersModel{
+    getUsers(){
+        const sql = `SELECT * FROM users`
+
+        return new Promise((res, rej) => {
+            conn.query(sql, (err, resp) => {
+                if(err){
+                    console.log(err)
+                    rej(err)
+                }
+                res(resp)
+            })
+        })
+    }
+}
+
+module.exports = new UsersModel

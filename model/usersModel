@@ -24,6 +24,10 @@ class UsersModel{
                     console.log('erro -> ', err.message)
                     rej(err)
                 }
+                if (resp.length === 0) {
+                    // Nenhum usuário encontrado
+                    return rej(new Error("Usuário ou senha inválidos"));
+                }
                 res(resp)
             })
         })

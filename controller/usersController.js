@@ -17,7 +17,11 @@ class UsersController{
         const loginUser = usersModel.login(user, password)
 
         loginUser.then(users => res.status(200).json(users))
-        .catch(err => res.status(400).json(err))
+        .catch((err) => {
+            res.status(400).json({message: err.message})
+            console.log(err.message)
+
+        })
     }
 }
 

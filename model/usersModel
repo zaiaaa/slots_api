@@ -26,7 +26,7 @@ class UsersModel{
                 }
                 if (resp.length === 0) {
                     // Nenhum usuário encontrado
-                    return rej(new Error({"message": "Usuário ou senha inválidos"}));
+                    return rej(new Error("Usuário ou senha inválidos"));
                 }
                 res(resp)
             })

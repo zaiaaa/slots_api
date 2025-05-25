@@ -5,11 +5,11 @@ let conn = ''
 
 try{
     conn = mysql.createConnection({
-        host: "127.0.0.1",
-        port: 3306,
-        user: "root",
+        host: "slotsapi-gustavozaia75-0af4.h.aivencloud.com",
+        port: 28047,
+        user: "avnadmin",
         password: process.env.PASSWORD,
-        database: 'bet'
+        database: 'defaultdb'
     })
 }catch(e){
     conn = "erro -> ", e.message
